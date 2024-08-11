@@ -1,17 +1,15 @@
 import './Navbar.css';
 import logo from '../../img/logo.jpg';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { selectTotalBasketSum } from './NavbarSelector'; 
 
 
 
 const Navbar = () => {
-    const {numOfBasket} = useSelector((state) => state);
-    const dispatch = useDispatch();
+    
     
 
-    const clickHandleAdd = () => {
-        dispatch({type:'ADD2_ITEM'})
-    }
+    const totalBasketSum = useSelector(selectTotalBasketSum);
     
 
     return (
@@ -21,7 +19,7 @@ const Navbar = () => {
             <li><a href="#">Products</a></li>
             <li><a href="#">Contact</a></li>
             <li><a href="#">About</a></li>
-            <li style={{ marginLeft: 'auto' }}><i className='fa fa-shopping-basket'></i>{numOfBasket}</li>
+            <li style={{ marginLeft: 'auto' }}><i className='fa fa-shopping-basket'></i>{totalBasketSum}</li>
         </ul>
     );
 };
