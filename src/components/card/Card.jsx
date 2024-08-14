@@ -18,10 +18,10 @@ const Card = ({ id, image, title, content }) => {
     return (
         <div className="card">
             <div className="card-content">
-                <img style={{objectFit:"cover"}} width={270}  height={300} src={image} alt="" />
+                <img style={{objectFit:"cover"}} width={270}  height={300} src={image} alt="Çukur" />
                 <h3 className="card-title">{title}</h3>
                 <p className="card-text">{content}</p>
-                <button onClick={clickAdd} type='like'>To Like {numOfItems}</button>
+                <button className='like' onClick={clickAdd} type='like'>To Like {numOfItems}</button>
                 <button className='basket' onClick={clickHandleAdd}>To Basket {numOfBasket}</button>
             </div>
         </div>

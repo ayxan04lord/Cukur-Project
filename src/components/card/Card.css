@@ -3,6 +3,7 @@
     border-radius: 8px;
     width: 300px;
     margin: 16px;
+    padding-bottom: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
@@ -33,8 +34,11 @@
     color: #555;
 }
 
-.button1, .like{
-    float: left;
+.like{
+    background-color: gold;
+    text-align: center;
+    cursor: pointer;
+    color: #000;
 }
 
 .card{
