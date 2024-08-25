@@ -1,18 +1,24 @@
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+.container {
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gold;
+    /* padding: 0px ; */
+    /* margin: 3px; */
 }
-/* Navbar.css */
+
 ul {
     display: flex;
-    justify-content: center; /* Центрирует элементы по горизонтали */
-    align-items: center; /* Центрирует элементы по вертикали */
+    justify-content: center;
+    align-items: center;
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
+    /* width: 100% */
 }
 
 li {
@@ -33,13 +39,13 @@ li a:hover {
 
 
 li {
-    margin: 0 15px; /* Расстояние между элементами списка */
+    margin: 0 15px;
 }
 
 a {
     text-decoration: none;
     color: black;
-    padding: 14px 20px;
+    /* padding: 14px 20px; */
     display: block;
 }
 

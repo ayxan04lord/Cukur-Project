@@ -1,6 +1,7 @@
 import './Navbar.css';
 import logo from '../../img/logo.jpg';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const getBaskets = useSelector((state) => state.card.baskets);
@@ -9,17 +10,17 @@ const Navbar = () => {
         basketsCalculate = Object.values(getBaskets).reduce((acc, cur) => (acc += cur));
 
     return (
-        <div className="container" style={{ display: "flex",flexDirection: "row", justifyContent: "space-between", alignItems: "center", backgroundColor: "gold", padding: "0px 32px" }}>
+        <div className="container" style={{  }}>
             <div className="nav__logo">
-                <a href="#">
-                    <img width={20} src={logo} alt="logo" />
-                </a>
+                <Link to="/">
+                    <img width={20} src={logo} alt="Company logo" />
+                </Link>
             </div>
-            <ul >
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
+            <ul>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/products">Products</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/about">About</Link></li>
             </ul>
 
             <div className="nav__baskets">
