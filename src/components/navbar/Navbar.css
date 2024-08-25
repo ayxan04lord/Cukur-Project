@@ -3,7 +3,16 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+}
+/* Navbar.css */
+ul {
+    display: flex;
+    justify-content: center; /* Центрирует элементы по горизонтали */
+    align-items: center; /* Центрирует элементы по вертикали */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 li {
@@ -22,17 +31,6 @@ li a:hover {
     background-color: #111;
 }
 
-/* Navbar.css */
-ul {
-    display: flex;
-    justify-content: center; /* Центрирует элементы по горизонтали */
-    align-items: center; /* Центрирует элементы по вертикали */
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: gold;
-    overflow: hidden;
-}
 
 li {
     margin: 0 15px; /* Расстояние между элементами списка */
