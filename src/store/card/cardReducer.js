@@ -1,69 +1,39 @@
-// import { ADD_ITEM, ADD2_ITEM } from "../../actionTypes/actionTypes";
+export const addItem = (id) => ({ type: 'ADD_ITEM', payload: id });
+export const addItem2 = (id) => ({ type: 'ADD_ITEM2', payload: id });
 
-// const initialState = {
-//   items: {},
-//   basket: {},
-// };
-
-// export const cardReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case ADD_ITEM:
-//       return {
-//         ...state,
-//         items: {
-//           ...state.items,
-//           [action.payload]: (state.items[action.payload] || 0) + 1
-//         }
-//       };
-
-//     case ADD2_ITEM:
-//       return {
-//         ...state,
-//         basket: {
-//           ...state.basket,
-//           [action.payload]: (state.basket[action.payload] || 0) + 1
-//         }
-//       };
-
-//     default:
-//       return state;
-//   }
-// };
-
-// REDUX -------------------------------------------------------------------
-
-import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: {},     
-  baskets: {},   
+  items: {},
+  baskets: {},
+  likedItems: [],
+  basketItems: [],
 };
 
-export const cardSlice = createSlice({
-  name: 'card',
-  initialState,
-  reducers: {
-    addItem(state, action) {
-      const id = action.payload;
-      if (!state.items[id]) {
-        state.items[id] = 0;
-      }
-      state.items[id]++;
-      console.log('addItem called', state);
-    },
+ const cardReducer = (state = initialState, action) => {
+  switch (action.type) {
+      case 'ADD_ITEM':
+          return {
+              ...state,
+              items: {
+                  ...state.items,
+                  [action.payload]: (state.items[action.payload] || 0) + 1,
+              },
+              likedItems: [...new Set([...state.likedItems, action.payload])], // добавляем в понравившиеся
+          };
+      case 'ADD_ITEM2':
+          return {
+              ...state,
+              baskets: {
+                  ...state.baskets,
+                  [action.payload]: (state.baskets[action.payload] || 0) + 1,
+              },
+              basketItems: [...new Set([...state.basketItems, action.payload])], // добавляем в корзину
+          };
+      default:
+          return state;
+  }
+};
 
-    addItem2(state, action) {
-      const id = action.payload;
-      if (!state.baskets[id]) {
-        state.baskets[id] = 0;
-      }
-      state.baskets[id]++;
-    },
-  },
-});
+// Actions
 
-export const { addItem, addItem2 } = cardSlice.actions;
-
-export default cardSlice.reducer;
-
-
+export default cardReducer;

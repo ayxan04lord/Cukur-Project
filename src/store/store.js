@@ -6,7 +6,7 @@
 // export default store;
 
 import { configureStore } from '@reduxjs/toolkit';
-import cardReducer from './card/cardReducer'; // Импортируем редьюсер напрямую из слайса
+import cardReducer from '../store/card/cardReducer'; // Импортируем редьюсер напрямую из слайса
 
 const store = configureStore({
   reducer: {

@@ -1,15 +1,3 @@
-.container {
-    width: 100%;
-    min-height: 50px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: gold;
-    /* padding: 0px ; */
-    /* margin: 3px; */
-}
-
 ul {
     display: flex;
     justify-content: center;
@@ -18,11 +6,12 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /* width: 100% */
+    
 }
 
 li {
     float: left;
+    margin: 0 15px;
 }
 
 li a {
@@ -37,19 +26,24 @@ li a:hover {
     background-color: #111;
 }
 
-
-li {
-    margin: 0 15px;
-}
-
 a {
     text-decoration: none;
     color: black;
-    /* padding: 14px 20px; */
     display: block;
 }
 
 a:hover {
     background-color: #ddd;
     color: black;
+}
+
+.navbar{
+    width: 100%;
+    min-height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: gold;
+    padding: 0px 50px;
 }

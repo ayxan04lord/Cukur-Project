@@ -23,44 +23,44 @@ const Slider = () => {
             {/* The slideshow/carousel */}
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <div class="image-container">
+                    <div className="image-container">
                         <img
                             src={sezon1}
                             alt="Sezon_4"
                             className="d-block custom-image"
                         />
-                        <div class="text-overlay">SEZON 1</div>
+                        <div className="text-overlay">SEZON 1</div>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <div class="image-container">
+                    <div className="image-container">
                         <img
                             src={sezon2}
                             alt="Sezon_2"
                             className="d-block custom-image"
                         />
-                        <div class="text-overlay">SEZON 2</div>
+                        <div className="text-overlay">SEZON 2</div>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <div class="image-container">
+                    <div className="image-container">
                         <img
                             src={sezon3}
                             alt="Sezon_3"
                             className="d-block custom-image"
                         />
-                        <div class="text-overlay">SEZON 3</div>
+                        <div className="text-overlay">SEZON 3</div>
                     </div>
                 </div>
                 <div className="carousel-item">
 
-                    <div class="image-container">
+                    <div className="image-container">
                         <img
                             src={sezon4}
                             alt="Sezon_4"
                             className="d-block custom-image"
                         />
-                        <div class="text-overlay">SEZON 4</div>
+                        <div className="text-overlay">SEZON 4</div>
                     </div>
 
                 </div>
