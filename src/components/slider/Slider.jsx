@@ -1,4 +1,5 @@
 import './Slider.css';
+
 import sezon1 from '../../img/Cukur_SEZON1.jpg';
 import sezon2 from '../../img/Çukur_2._sezon.jpg';
 import sezon3 from '../../img/Çukur.jpg';

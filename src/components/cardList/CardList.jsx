@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+
 import Card from '../card/Card';
 
 const CardList = () => {
-    const [cardsData, setCardsData] = useState([]);
+    const [cardsData, setCardsData] = useState();
 
     useEffect(() => {
-        fetch('./cardsData.json')  // Укажи путь к JSON файлу
+        fetch('../cardsData.json')
             .then(response => response.json())
             .then(data => setCardsData(data))
             .catch(error => console.error('Error loading data:', error));

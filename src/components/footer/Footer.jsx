@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './Footer.css';
 
 const Footer = () => {
@@ -7,9 +8,9 @@ const Footer = () => {
       <div className="footer-content">
         <div className="contact-info">
           <h3>Contact Us</h3>
-          <p>Email: info@example.com</p>
-          <p>Phone: +123 456 7890</p>
-          <p>Address: 123 Main Street, City, Country</p>
+          <p>Email: ayxan.com</p>
+          <p>Phone: +994556772714</p>
+          <p>Address: Baku, Azerbaijan</p>
         </div>
         <div className="social-links">
           <h3>Follow Us</h3>
@@ -18,9 +19,7 @@ const Footer = () => {
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
       </div>
-      <div className="footer-bottom">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
-      </div>
+      
     </footer>
   );
 };

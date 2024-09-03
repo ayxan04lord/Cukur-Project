@@ -1,33 +1,22 @@
-// App.js
 import React from 'react';
-// import { Route, Routes, Link } from 'react-router-dom';
-import CardList from './components/cardList/CardList';
-// import LikedItemsPage from './components/items/LikedItemsPage'; 
-// import BasketItemsPage from './components/items/BasketItemsPage';
-import Navbar from './components/navbar/Navbar';
-import './App.css';
-import Slider from './components/slider/Slider';
-import Footer from './components/footer/Footer';
+import { Route, Routes } from 'react-router';
+
+import Home from './pages/home/Home';
+import Baskets from './pages/baskets/Baskets';
+import Likes from './pages/like/Likes';
+import Layout from './layout/Layout';
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Slider />
-      <CardList />
-      {/* <nav>
-        <Link to="/">Home</Link>
-        <Link to="/liked">Liked Items</Link>
-        <Link to="/basket">Basket Items</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<CardList />} />
-        <Route path="/liked" element={<LikedItemsPage />} />
-        <Route path="/basket" element={<BasketItemsPage />} />
-      </Routes> */}
-
-      <Footer />
-    </div>
+    <Routes>
+      <Route>
+        <Route path='/' element={<Layout/>}>
+          <Route index element={<Home />} />
+          <Route path='/baskets' element={<Baskets />} />
+          <Route path='/likes' element={<Likes />} />
+        </Route>
+      </Route>
+    </Routes>
   );
 }
 
