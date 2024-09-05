@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import './Card.css'
+
 export const addItem = (id) => ({ type: 'ADD_ITEM', payload: id });
 export const addItem2 = (id) => ({ type: 'ADD_ITEM2', payload: id });
 
@@ -20,21 +22,24 @@ const Card = ({ id, image, title, content }) => {
     }
 
     return (
-        <div className="card">
-            <div className="card-content">
-                <img style={{ objectFit: "cover" }} width={270} height={300} src={image} alt={title} />
-                <h3 className="card-title">
-                    {title} {isLiked && <span>✔️</span>} {isInBasket && <span>🛒</span>}
-                </h3>
-                <p className="card-text">{content}</p>
-                <button className='like' onClick={clickAdd} type='like'>
-                    To Like {items[id]}
-                </button>
-                <button className='basket' onClick={clickHandleAdd}>
-                    To Basket {baskets[id]}
-                </button>
+        <div className="col-md-3">
+            <div className="card">
+                <div className="card-content">
+                    <img style={{ objectFit: "cover" }} width={270} height={300} src={image} alt={title} />
+                    <h3 className="card-title">
+                        {title} {isLiked && <span>✔️</span>} {isInBasket && <span>🛒</span>}
+                    </h3>
+                    <p className="card-text">{content}</p>
+                    <button className='like' onClick={clickAdd} type='like'>
+                        To Like {items[id]}
+                    </button>
+                    <button className='basket' onClick={clickHandleAdd}>
+                        To Basket {baskets[id]}
+                    </button>
+                </div>
             </div>
         </div>
+
     );
 };
 

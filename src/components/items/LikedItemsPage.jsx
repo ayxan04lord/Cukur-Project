@@ -9,21 +9,14 @@ const LikedItemsPage = () => {
 
   return (
     <div>
+      
       <h1>Liked Items</h1>
-      <div className="cards-list">
-        {likedItems.map(id => {
-          const card = cards.find(c => c.id === id);
-          return card ? (
-            <Card
-              key={card.id}
-              id={card.id}
-              title={card.title}
-              content={card.content}
-              image={card.image}
-            />
-          ) : null;
-        })}
-      </div>
+      <table>
+        <th>
+          <tr>ID</tr>
+          <tr>{}</tr>
+        </th>
+      </table>
     </div>
   );
 };

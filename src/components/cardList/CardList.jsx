@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 import Card from '../card/Card';
 
+import './CardList.css'
+
 const CardList = () => {
-    const [cardsData, setCardsData] = useState();
+    const [cardsData, setCardsData] = useState([]);
 
     useEffect(() => {
-        fetch('../cardsData.json')
+        fetch('http://localhost:3001/person')
             .then(response => response.json())
             .then(data => setCardsData(data))
             .catch(error => console.error('Error loading data:', error));
@@ -17,6 +19,7 @@ const CardList = () => {
             <div className="text">
                 <span>Characters</span>
             </div>
+            <div className="row">
             {cardsData.map(card => (
                 <Card
                     key={card.id}
@@ -26,6 +29,8 @@ const CardList = () => {
                     image={card.image}
                 />
             ))}
+            </div>
+            
         </div>
     );
 };
