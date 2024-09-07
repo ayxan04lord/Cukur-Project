@@ -1,9 +1,7 @@
 import './Slider.css';
 
-import sezon1 from '../../img/Cukur_SEZON1.jpg';
-import sezon2 from '../../img/Çukur_2._sezon.jpg';
-import sezon3 from '../../img/Çukur.jpg';
-import sezon4 from '../../img/sezon4.webp';
+// import sezon1 from '../../../public/img/Cukur_SEZON1.jpg';
+
 
 const Slider = () => {
     return (
@@ -26,7 +24,7 @@ const Slider = () => {
                 <div className="carousel-item active">
                     <div className="image-container">
                         <img
-                            src={sezon1}
+                            src={'./img/Cukur_SEZON1.jpg'}
                             alt="Sezon_4"
                             className="d-block custom-image"
                         />
@@ -36,7 +34,7 @@ const Slider = () => {
                 <div className="carousel-item">
                     <div className="image-container">
                         <img
-                            src={sezon2}
+                            src={'./img/Çukur_2._sezon.jpg'}
                             alt="Sezon_2"
                             className="d-block custom-image"
                         />
@@ -46,7 +44,7 @@ const Slider = () => {
                 <div className="carousel-item">
                     <div className="image-container">
                         <img
-                            src={sezon3}
+                            src={"./img/sezon_3.jpg"}
                             alt="Sezon_3"
                             className="d-block custom-image"
                         />
@@ -57,7 +55,7 @@ const Slider = () => {
 
                     <div className="image-container">
                         <img
-                            src={sezon4}
+                            src={"./img/sezon4.webp"}
                             alt="Sezon_4"
                             className="d-block custom-image"
                         />

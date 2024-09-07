@@ -1,0 +1,254 @@
+{
+    "person":[
+        
+        {
+            "id": 1,
+            "title": "Aras Bulut İynemli",
+            "content": "Yamaç Koçovalı",
+            "image": "img/yamac.png",
+            "wikipedia" : "https://tr.wikipedia.org/wiki/Aras_Bulut_%C4%B0ynemli"
+        },
+        {
+            "id": 2,
+            "title": "Dilan Çiçek Deniz",
+            "content": "Sena Koçovalı",
+            "image": "img/sena.jpg",
+            "wikipedia" : "https://tr.wikipedia.org/wiki/Dilan_%C3%87i%C3%A7ek_Deniz"
+        },
+        {
+            "id": 3,
+            "title": "Ercan Kesal",
+            "content": "İdris Koçovalı",
+            "image": "img/idris.png",
+            "wikipedia":"https://tr.wikipedia.org/wiki/Ercan_Kesal"
+        },
+        {
+            "id": 4,
+            "title": "Perihan Savaş",
+            "content": "Sultan Koçovalı",
+            "image": "img/sultan.png",
+            "wikipedia":"https://tr.wikipedia.org/wiki/Perihan_Sava%C5%9F"
+        },
+        {
+            "id": 5,
+            "title": "Mustafa Üstündağ",
+            "content": "Kahraman Koçovalı",
+            "image": "img/kahraman.jpg",
+            "wikipedia":"https://tr.wikipedia.org/wiki/Mustafa_%C3%9Cst%C3%BCnda%C4%9F_(oyuncu)"
+        },
+        {
+            "id": 6,
+            "title": "Öner Erkan",
+            "content": "Selim Koçovalı",
+            "image": "img/selim.png",
+            "wikipedia":"https://tr.wikipedia.org/wiki/%C3%96ner_Erkan"
+        },
+        {
+            "id": 7,
+            "title": "Erkan Kolçak Köstendil",
+            "content": "Vartolu Saadettin",
+            "image": "img/vartolu.jpg",
+            "wikipedia":""
+        },
+
+        {
+            "id": 8,
+            "title": "Rıza Kocaoğlu",
+            "content": "Aliço ",
+            "image": "img/aliço.jpeg",
+            "wikipedia":""
+        },
+        {
+            "id": 9,
+            "title": "Burak Sergen",
+            "content": "Baykal Kent",
+            "image": "img/baykal.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 10,
+            "title": "Nebil Sayın",
+            "content": "Muhittin Derbent",
+            "image": "img/muhittin.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 11,
+            "title": "Kubilay Aka",
+            "content": "Celasun Gümüş",
+            "image": "img/celasun.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 12,
+            "title": "Ahmet Tansu Taşanlar",
+            "content": "Nazım Kent",
+            "image": "img/nazım.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 13,
+            "title": "Çetin Sarıkartal",
+            "content": "Cihangir (Paşa)",
+            "image": "img/paşa.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 14,
+            "title": "Kadir Çermik",
+            "content": "Mücahit (Emmi)",
+            "image": "img/emmi.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 15,
+            "title": "İrem Altuğ",
+            "content": "Ayşe Koçovalı",
+            "image": "img/ayse.png",
+            "wikipedia":""
+        },
+    
+        {
+            "id": 16,
+            "title": "Zeynep Kumral",
+            "content": "Nedret Koçovalı",
+            "image": "img/nedret.webp",
+            "wikipedia":""
+        },
+        {
+            "id": 17,
+            "title": "Boncuk Yılmaz",
+            "content": "Saadet Koçovalı",
+            "image": "img/saadet.png",
+            "wikipedia":""
+        },
+        {
+            "id": 18,
+            "title": "Cem Uslu",
+            "content": "Metin Yaman",
+            "image": "img/metin.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 19,
+            "title": "Uğur Yıldıran",
+            "content": "Kemal Yaman",
+            "image": "img/kemal.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 20,
+            "title": "Aytaç Uşun",
+            "content": "Mustafa Derbent (Meke)",
+            "image": "img/meke.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 21,
+            "title": "Elif Doğan",
+            "content": "Müge Hale Atik",
+            "image": "img/hale.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 22,
+            "title": "İlayda Alişan",
+            "content": "Akşın Gümüş",
+            "image": "img/akşın.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 23,
+            "title": "Ece Yaşar",
+            "content": "Karaca Koçovalı",
+            "image": "img/karaca.png",
+            "wikipedia":""
+        },
+        {
+            "id": 24,
+            "title": "Mustafa Kırantepe",
+            "content": "Medet",
+            "image": "img/medet.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 25,
+            "title": "Doğan Can Sarıkay",
+            "content": "Acar Koçovalı",
+            "image": "img/acar.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 26,
+            "title": "Necip Memili",
+            "content": "Cumali Koçovalı",
+            "image": "/img/cumali.png",
+            "wikipedia":""
+        },
+        {
+            "id": 27,
+            "title": "Erkan Avcı",
+            "content": "Çeto",
+            "image": "/img/çeto.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 28,
+            "title": "Berkay Ateş",
+            "content": "Mahsun",
+            "image": "/img/mahsun.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 29,
+            "title": "Şenay Gürler",
+            "content": "Meliha",
+            "image": "/img/meliha.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 30,
+            "title": "Cihangir Ceyhan",
+            "content": "Azer Kurtuluş",
+            "image": "/img/cumali.png",
+            "wikipedia":""
+        },
+        {
+            "id": 31,
+            "title": "Burak Dakak",
+            "content": "Akın Koçovalı",
+            "image": "img/akın.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 32,
+            "title": "Ahmet Melih Yılmaz",
+            "content": "Timsah Celil",
+            "image": "/img/timsah.jpg",
+            "wikipedia":""
+        },
+        
+        {
+            "id": 33,
+            "title": "Hare Sürel",
+            "content": "Damla Koçovalı",
+            "image": "img/damla.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 34,
+            "title": "Tansu Biçer",
+            "content": "Yücel Tansoy",
+            "image": "/img/yucel.jpg",
+            "wikipedia":""
+        },
+        {
+            "id": 35,
+            "title": "Nejat İşler",
+            "content": "Çağatay Erdenet",
+            "image": "/img/cagatay_erdenet.jpeg",
+            "wikipedia":""
+        }
+        
+    ]
+}

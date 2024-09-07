@@ -6,6 +6,9 @@ const ProductsPage = () => {
     return (
         <div>
             <Navbar />
+            <h1>
+                Products
+            </h1>
             <Footer />
         </div>
     )

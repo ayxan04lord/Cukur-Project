@@ -8,12 +8,12 @@ import Slider from "../../components/slider/Slider";
 const HomePage = () => {
     return (
         <div>
-            <div className="myContainer">
-                <Navbar />
-                <Slider />
-                <CardList />
 
-            </div>
+            <Navbar />
+            <Slider />
+            <CardList />
+
+
             <Footer />
         </div>
     )
