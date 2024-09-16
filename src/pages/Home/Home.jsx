@@ -5,18 +5,16 @@ import Slider from "../../components/slider/Slider";
 
 
 
-const HomePage = () => {
+const Home = () => {
     return (
         <div>
 
             <Navbar />
             <Slider />
             <CardList />
-
-
             <Footer />
         </div>
     )
 }
 
-export default HomePage;
+export default Home;

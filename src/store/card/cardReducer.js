@@ -1,58 +1,54 @@
-export const addItem = (id) => ({ type: 'ADD_ITEM', payload: id });
-export const addItem2 = (id) => ({ type: 'ADD_ITEM2', payload: id });
-export const toggleLike = (id) => ({ type: 'TOGGLE_LIKE', payload: id });
-export const toggleBasket = (id) => ({ type: 'TOGGLE_BASKET', payload: id });
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    items: {},
-    baskets: {},
+    items: [],
+    baskets: [],
     likedItems: [],
     basketItems: [],
 };
 
-const cardReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'ADD_ITEM':
-            return {
-                ...state,
-                items: {
-                    ...state.items,
-                    [action.payload]: (state.items[action.payload] || 0) + 1,
-                },
-                likedItems: [...new Set([...state.likedItems, action.payload])],
-            };
-        case 'ADD_ITEM2':
-            return {
-                ...state,
-                baskets: {
-                    ...state.baskets,
-                    [action.payload]: (state.baskets[action.payload] || 0) + 1,
-                },
-                basketItems: [...new Set([...state.basketItems, action.payload])],
-            };
-        case 'TOGGLE_LIKE': {
-            const { payload: id } = action;
+const cardSlice = createSlice({
+    name: 'card',
+    initialState,
+    reducers: {
+        addLikes: (state, action) => {
+            const id = action.payload;
+            state.items[id] = (state.items[id] || 0) + 1;
+            if (!state.likedItems.includes(id)) {
+                state.likedItems.push(id);
+            }
+        },
+        addMovies:(state, action)=>{
+            state.items = action.payload
+        },
+        addBaskets: (state, action) => {
+            const id = action.payload;
+            state.baskets[id] = (state.baskets[id] || 0) + 1;
+            if (!state.basketItems.includes(id)) {
+                state.basketItems.push(id);
+            }
+        },
+        toggleLike: (state, action) => {
+            const id = action.payload;
             const isLiked = state.likedItems.includes(id);
-            return {
-                ...state,
-                likedItems: isLiked
-                    ? state.likedItems.filter(itemId => itemId !== id)
-                    : [...state.likedItems, id]
-            };
-        }
-        case 'TOGGLE_LIKE': {
-            const { payload: id } = action;
+            if (isLiked) {
+                state.likedItems = state.likedItems.filter(itemId => itemId !== id);
+            } else {
+                state.likedItems.push(id);
+            }
+        },
+        toggleBasket: (state, action) => {
+            const id = action.payload;
             const isInBasket = state.basketItems.includes(id);
-            return {
-                ...state,
-                basketItems: isInBasket
-                    ? state.basketItems.filter(basketID => basketID !== id)
-                    : [...state.likedItems, id]
-            };
+            if (isInBasket) {
+                state.basketItems = state.basketItems.filter(basketID => basketID !== id);
+            } else {
+                state.basketItems.push(id);
+            }
         }
-        default:
-            return state;
     }
-};
+});
 
-export default cardReducer;
+export const { addLikes, addBaskets, toggleLike, toggleBasket, addMovies } = cardSlice.actions;
+
+export default cardSlice.reducer;

@@ -1,7 +1,7 @@
 .cards-list {
     width: 100%;
     text-align: center;
-    padding: 20px; /* Добавил отступы по краям */
+    padding: 2px; 
 }
 
 .text {
@@ -11,13 +11,13 @@
     color: gold;
     font-size: 35px;
     font-weight: bold;
-    margin: 20px 0; /* Установил вертикальные отступы */
+    margin: 20px 0; 
     text-transform: uppercase;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Центрирует карточки по горизонтали */
-    gap: 20px; /* Добавляет отступы между карточками */
+    justify-content: center; 
+    gap: 20px; 
 }

@@ -1,15 +1,17 @@
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
-import LikedItemsPage from "../../components/items/LikedItemsPage";
 
-const LikesPage = () => {
+
+const Products = () => {
     return (
-        <>
+        <div>
             <Navbar />
-            <LikedItemsPage />
+            <h1>
+                Products
+            </h1>
             <Footer />
-        </>
+        </div>
     )
 }
 
-export default LikesPage;
+export default Products;

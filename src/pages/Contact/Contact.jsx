@@ -2,14 +2,16 @@ import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 // import LikedItemsPage from "../../components/items/LikedItemsPage";
 
-const ContactPage = () => {
+const Contact = () => {
     return (
         <>
             <Navbar />
-            <h1>Contact</h1>
+            <main className="contact">
+                <h1>CONTACT</h1>
+            </main>
             <Footer />
         </>
     )
 }
 
-export default ContactPage;
+export default Contact;

@@ -1,23 +1,23 @@
 import React from 'react';
 import { Route, Routes } from 'react-router';
 
-import HomePage from './pages/HomePage/HomePage';
-import Baskets from './pages/BasketPage/BasketPage';
-import Likes from './pages/LikesPage/LikesPage';
+import Home from './pages/Home/Home';
+import Baskets from './pages/Basket/Basket';
+import Likes from './pages/Likes/Likes';
 import Layout from './layout/Layout';
-import ProductsPage from './pages/ProductsPage/ProductsPage';
-import ContactPage from './pages/ContactPage/ContactPage';
-import AboutPage from './pages/AboutPage/AboutPage';
+import Products from './pages/Products/Products';
+import Contact from './pages/Contact/Contact';
+import About from './pages/About/About';
 
 function App() {
   return (
     <Routes>
       <Route>
         <Route path='/' element={<Layout/>}>
-          <Route index element={<HomePage />} />
-          <Route path='/products' element={<ProductsPage />} />
-          <Route path='/about' element={<AboutPage/>} />
-          <Route path='/contact' element={<ContactPage/>} />
+          <Route index element={<Home />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/about' element={<About/>} />
+          <Route path='/contact' element={<Contact/>} />
           <Route path='/baskets' element={<Baskets />} />
           <Route path='/likes' element={<Likes />} />
         </Route>

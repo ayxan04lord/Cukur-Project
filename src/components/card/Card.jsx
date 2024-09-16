@@ -1,30 +1,28 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleBasket, toggleLike, addItem, addItem2 } from '../../store/card/cardReducer';
+import { toggleBasket, toggleLike } from '../../store/card/cardReducer';
 
 import './Card.css'
 
-
-
 const Card = ({ id, image, title, content, wikipedia }) => {
-    const { items, baskets, likedItems, basketItems } = useSelector((state) => state.card);
-    const dispatch = useDispatch();
-
+    
+    const { likedItems, basketItems } = useSelector((state) => state.card);
     const isLiked = likedItems.includes(id);
     const isInBasket = basketItems.includes(id);
+    const dispatch = useDispatch();
 
-    const clickAdd = () => {
-        dispatch(addItem(id));
-    }
+    // const clickAdd = () => {
+    //     dispatch(addLikes(id));
+    // }
 
     const handleLikeToggle = useCallback(() => {
         dispatch(toggleLike(id));
     }, [dispatch, id]);
 
-    const clickHandleAdd = () => {
-        dispatch(addItem2(id));
+    // const clickHandleAdd = () => {
+    //     dispatch(addBaskets(id));
 
-    }
+    // }
 
     const handleBasketToggle = useCallback(()=>{
         dispatch(toggleBasket(id));

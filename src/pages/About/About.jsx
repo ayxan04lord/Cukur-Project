@@ -2,7 +2,7 @@ import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 // import LikedItemsPage from "../../components/items/LikedItemsPage";
 
-const AboutPage = () => {
+const About = () => {
     return (
         <>
             <Navbar />
@@ -12,4 +12,4 @@ const AboutPage = () => {
     )
 }
 
-export default AboutPage;
+export default About;

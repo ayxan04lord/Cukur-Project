@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addMovies } from '../../store/card/cardReducer';
 import Card from '../card/Card';
+
 import './CardList.css';
 
 const CardList = () => {
-    const [cardsData, setCardsData] = useState([]);
-
+    // const [cardsData, setCardsData] = useState([]);
+    const dispatch = useDispatch();
+    const cardsData = useSelector(state => state.card.items)
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await fetch('http://localhost:5000/person');
                 const data = await response.json();
-                setCardsData(data);
+                // setCardsData(data);
+                dispatch(addMovies(data))
             } catch (error) {
                 console.error('Error loading data:', error);
             }
@@ -25,9 +30,9 @@ const CardList = () => {
                 <span>Characters</span>
             </div>
             <div className="row">
-                {cardsData.map(card => (
+                {cardsData.map((card, index) => (
                     <Card
-                        key={card.id}
+                        key={index}
                         id={card.id}
                         title={card.title}
                         content={card.content}
