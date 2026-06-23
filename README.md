@@ -1,70 +1,236 @@
-# Getting Started with Create React App
+# 🎬 Çukur Fan App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Türk serialı **Çukur** (2017–2021) üçün tam stack fan veb tətbiqi.  
+React + Redux frontend, Django REST Framework backend, SQLite verilənlər bazası.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Layihə haqqında
 
-### `npm start`
+Çukur Fan App istifadəçilərə serialın personajlarını, mövsümlərini kəşf etməyə,  
+bəyəndiklərini saxlamağa və bilik yarışmasında iştirak etməyə imkan verir.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Əsas xüsusiyyətlər
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Xüsusiyyət | Təsvir |
+|---|---|
+| 🎭 Personajlar | 35 personaj — şəkil, rol məlumatı, Wikipedia linki |
+| 📺 Mövsümlər | 4 mövsüm kartı — YouTube playlist linkləri ilə |
+| 🎠 Slider | Ana səhifə mövsüm slider-i |
+| ❤️ Bəyənilənlər | Login olmuş istifadəçilərin bəyəndikləri backend-də saxlanır |
+| 🛒 Səbət | Personajları səbətə əlavə et |
+| 🔐 Auth | Qeydiyyat / Giriş — Django Token auth |
+| 👤 Profil | Avatar seçici, bio redaktəsi, statistika |
+| 🧠 Quiz | Serialda baş verən hadisələr haqqında suallar — asan/orta/çətin |
+| 💬 Fan Review | Hər personaja şərh və ulduz reytinqi (localStorage) |
+| 🌗 Dark/Light | Tema dəyişdirici |
+| 🔍 Filtr | Mövsüm və rol tipi (qəhrəman/antagonist) filterləri |
+| 🔧 Admin | Django admin panelindən bütün məlumatları idarə et |
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠 İstifadə olunan texnologiyalar
 
-### `npm run build`
+### Frontend
+| Texnologiya | Versiya | Məqsəd |
+|---|---|---|
+| React | 18.3 | UI framework |
+| Vite | 5.4 | Build tool / Dev server |
+| Redux Toolkit | 2.2 | State management |
+| React Redux | 9.1 | Redux-React inteqrasiyası |
+| React Router DOM | 6.26 | Client-side routing |
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
+| Texnologiya | Versiya | Məqsəd |
+|---|---|---|
+| Python | 3.14 | Proqramlaşdırma dili |
+| Django | 6.0 | Web framework |
+| Django REST Framework | 3.17 | REST API |
+| django-cors-headers | 4.9 | CORS idarəsi |
+| SQLite | built-in | Verilənlər bazası |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📁 Layihə strukturu
 
-### `npm run eject`
+```
+Çukur/
+├── src/                        # React frontend
+│   ├── components/             # Yenidən istifadə olunan komponentlər
+│   │   ├── card/               # Personaj kartı + modal
+│   │   ├── cardList/           # Filtrlənən personaj siyahısı
+│   │   ├── navbar/             # Naviqasiya paneli
+│   │   ├── slider/             # Ana səhifə slider-i
+│   │   ├── review/             # Fan şərh komponenti
+│   │   ├── items/              # Bəyənilənlər / Səbət siyahıları
+│   │   └── ProtectedRoute/     # Auth guard
+│   ├── pages/                  # Səhifə komponentləri
+│   │   ├── Home/               # Ana səhifə
+│   │   ├── Products/           # Mövsümlər
+│   │   ├── Quiz/               # Bilik yarışması
+│   │   ├── Profile/            # İstifadəçi profili
+│   │   ├── Login/              # Giriş formu
+│   │   ├── Register/           # Qeydiyyat formu
+│   │   ├── Likes/              # Bəyənilənlər səhifəsi
+│   │   ├── Basket/             # Səbət səhifəsi
+│   │   ├── About/              # Haqqında
+│   │   └── Contact/            # Əlaqə
+│   ├── store/                  # Redux store
+│   │   ├── auth/               # Auth reducer (login/register/logout)
+│   │   ├── card/               # Likes/basket reducer
+│   │   ├── content/            # Persons/seasons/slides reducer
+│   │   ├── navbar/             # Navbar state
+│   │   └── theme/              # Dark/light mode
+│   ├── services/
+│   │   └── api.js              # Bütün API çağırışları
+│   └── layout/                 # Layout komponenti
+│
+├── backend/                    # Django backend
+│   ├── api/                    # Əsas app
+│   │   ├── models.py           # Season, Person, SliderSlide, QuizQuestion, LikedItem, BasketItem
+│   │   ├── views.py            # API view-ları
+│   │   ├── serializers.py      # DRF serializer-ları
+│   │   ├── urls.py             # API URL-ləri
+│   │   ├── admin.py            # Admin panel konfiqurasiyası
+│   │   └── management/
+│   │       └── commands/
+│   │           ├── seed.py         # Personaj/mövsüm/slide seeder
+│   │           └── seed_quiz.py    # Quiz sualları seeder
+│   ├── backend/
+│   │   ├── settings.py         # Django ayarları
+│   │   └── urls.py             # Root URL konfiqurasiyası
+│   ├── venv/                   # Python virtual environment (git-ə daxil deyil)
+│   ├── requirements.txt        # Python asılılıqları
+│   └── db.sqlite3              # SQLite DB (git-ə daxil deyil)
+│
+├── public/
+│   └── img/                    # Personaj şəkilləri
+├── package.json                # Node.js asılılıqları
+└── README.md
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚀 Quraşdırma və işə salma
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Tələblər
+- **Node.js** 18+
+- **Python** 3.10+
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### 1. Layihəni klon et
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/istifadeci_adi/cukur-fan-app.git
+cd cukur-fan-app
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### 2. Frontend quraşdırması
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+# Asılılıqları yüklə
+npm install
 
-### Analyzing the Bundle Size
+# Dev serveri başlat (http://localhost:5173)
+npm run dev
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+### 3. Backend quraşdırması
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+cd backend
 
-### Advanced Configuration
+# Virtual environment yarat
+python -m venv venv
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Virtual environment-i aktivləşdir
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
 
-### Deployment
+# Asılılıqları yüklə
+pip install -r requirements.txt
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# Verilənlər bazasını yarat
+python manage.py migrate
 
-### `npm run build` fails to minify
+# İlkin məlumatları DB-yə yüklə
+python manage.py seed
+python manage.py seed_quiz
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Admin istifadəçi yarat
+python manage.py createsuperuser
+
+# Serveri başlat (http://127.0.0.1:8000)
+python manage.py runserver
+```
+
+---
+
+## 🔌 API Endpointləri
+
+### Public (auth tələb etmir)
+| Method | URL | Təsvir |
+|---|---|---|
+| GET | `/api/persons/` | Bütün personajlar |
+| GET | `/api/seasons/` | Bütün mövsümlər |
+| GET | `/api/slides/` | Slider məlumatları |
+| GET | `/api/quiz/questions/` | Quiz sualları (`?difficulty=easy&category=events&limit=10`) |
+
+### Auth
+| Method | URL | Təsvir |
+|---|---|---|
+| POST | `/api/auth/register/` | Qeydiyyat |
+| POST | `/api/auth/login/` | Giriş → Token |
+| POST | `/api/auth/logout/` | Çıxış |
+| GET | `/api/auth/me/` | Cari istifadəçi |
+
+### Protected (Token tələb edir)
+| Method | URL | Təsvir |
+|---|---|---|
+| GET | `/api/likes/` | Bəyənilənlər siyahısı |
+| POST | `/api/likes/toggle/` | Bəyən / bəyənməni ləğv et |
+| GET | `/api/basket/` | Səbət siyahısı |
+| POST | `/api/basket/toggle/` | Səbətə əlavə et / çıxar |
+
+---
+
+## 🔧 Admin panel
+
+`http://127.0.0.1:8000/admin/` — superuser ilə daxil ol.
+
+Admin panelindən:
+- **Personajlar** — əlavə et, redaktə et, mövsüm bağlantıları qur
+- **Mövsümlər** — il, bölüm sayı, YouTube linki
+- **Slider** — slayd şəkilləri və linkləri
+- **Quiz sualları** — çətinlik, kateqoriya, variantlar, izahat
+- **Bəyənilənlər / Səbət** — istifadəçi aktivliyini izlə
+
+---
+
+## ⚙️ Mühit dəyişənləri (opsional)
+
+Frontend üçün `.env` faylı yarat:
+
+```env
+VITE_API_URL=http://127.0.0.1:8000/api
+```
+
+---
+
+## 📝 Seeder əmrləri
+
+```bash
+# Bütün məlumatları sıfırla və yenidən yüklə
+python manage.py seed --clear
+python manage.py seed_quiz --clear
+
+# Yalnız quiz suallarını yenilə
+python manage.py seed_quiz
+```

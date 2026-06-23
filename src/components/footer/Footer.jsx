@@ -1,39 +1,53 @@
-import React from 'react';
 import './Footer.css';
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-content row">
-        <div className="contact-info col-xs-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-          <h3>Contact Us</h3>
-          <p>Email: ayxan.com</p>
-          <p>Phone: +994556772714</p>
-          <p>Address: Baku, Azerbaijan</p>
+      <div className="footer__top">
+        <div className="footer__brand">
+          <img src="/img/logo.jpg" alt="Çukur Logo" />
+          <span>ÇUKUR</span>
+          <p>2017 – 2021 · Star TV</p>
         </div>
 
-        <div className="office-info col-xs-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-          <h3>Office</h3>
-          <p>Email: office@ayxan.com</p>
-          <p>Phone: +994123456789</p>
-          <p>Address: Tbilisi, Georgia</p>
+        <div className="footer__col">
+          <h4>Əlaqə</h4>
+          <p><i className="fa fa-envelope" /> ayxan@çukur.com</p>
+          <p><i className="fa fa-phone" /> +994 55 677 27 14</p>
+          <p><i className="fa fa-map-marker" /> Bakı, Azərbaycan</p>
         </div>
 
-        <div className="support-info col-xs-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-          <h3>Support</h3>
-          <p>Email: support@ayxan.com</p>
-          <p>Phone: +994987654321</p>
-          <p>Address: Istanbul, Turkey</p>
+        <div className="footer__col">
+          <h4>Keçidlər</h4>
+          <a href="/">Ana Səhifə</a>
+          <a href="/products">Mövsümlər</a>
+          <a href="/about">Haqqında</a>
+          <a href="/contact">Əlaqə</a>
         </div>
 
-        <div className="social-links col-xs-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
-          <h3>Follow Us</h3>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <div className="footer__col">
+          <h4>Sosial Media</h4>
+          <div className="footer__socials">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i className="fab fa-facebook-f" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <i className="fab fa-twitter" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i className="fab fa-instagram" />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <i className="fab fa-youtube" />
+            </a>
+          </div>
         </div>
       </div>
-      
+
+      <div className="footer__bottom">
+        <p>© {new Date().getFullYear()} Çukur Fan Layihəsi. Bütün hüquqlar qorunur.</p>
+        <p>❤️ Ayxan tərəfindən hazırlanmışdır</p>
+      </div>
     </footer>
   );
 };

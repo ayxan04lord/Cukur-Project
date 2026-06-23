@@ -1,16 +1,5 @@
-import Footer from "../../components/footer/Footer";
-import LikedItems from "../../components/items/liked_items/LikedItems";
-import Navbar from "../../components/navbar/Navbar";
+import LikedItems from '../../components/items/liked_items/LikedItems';
 
-
-const Likes = () => {
-    return (
-        <>
-            <Navbar />
-            <LikedItems/>
-            <Footer />
-        </>
-    )
-}
+const Likes = () => <LikedItems />;
 
 export default Likes;

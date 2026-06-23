@@ -1,20 +1,13 @@
-import CardList from "../../components/cardList/CardList";
-import Footer from "../../components/footer/Footer";
-import Navbar from "../../components/navbar/Navbar";
-import Slider from "../../components/slider/Slider";
-
-
+import Slider from '../../components/slider/Slider';
+import CardList from '../../components/cardList/CardList';
 
 const Home = () => {
-    return (
-        <div>
-
-            <Navbar />
-            <Slider />
-            <CardList />
-            <Footer />
-        </div>
-    )
-}
+  return (
+    <main>
+      <Slider />
+      <CardList />
+    </main>
+  );
+};
 
 export default Home;

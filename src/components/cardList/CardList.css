@@ -1,23 +1,201 @@
-.cards-list {
-    width: 100%;
-    text-align: center;
-    padding: 2px; 
+.cardlist {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: gold;
-    font-size: 35px;
-    font-weight: bold;
-    margin: 20px 0; 
-    text-transform: uppercase;
+.cardlist__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    gap: 20px; 
+.cardlist__title {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.cardlist__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+}
+
+.cardlist__search {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: border-color var(--transition);
+}
+
+.cardlist__search:focus-within {
+  border-color: var(--gold-dark);
+}
+
+.cardlist__search i {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.cardlist__search input {
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  width: 220px;
+}
+
+.cardlist__search input::placeholder {
+  color: var(--text-secondary);
+}
+
+.cardlist__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.cardlist__empty {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  padding: 3rem 0;
+  font-style: italic;
+}
+
+/* Controls row */
+.cardlist__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.cardlist__clear-x {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.8rem;
+  transition: color var(--transition);
+}
+
+.cardlist__clear-x:hover { color: var(--gold); }
+
+/* Filter bar */
+.cardlist__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: rgba(201, 168, 76, 0.04);
+  border: 1px solid var(--dark-border);
+  border-radius: 10px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter-group__label {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.filter-btn {
+  padding: 0.35rem 0.85rem;
+  background: #1a1a1a;
+  border: 1px solid var(--dark-border);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  border-color: var(--gold-dark);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: rgba(201, 168, 76, 0.15);
+  border-color: var(--gold);
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.filter-clear-btn {
+  padding: 0.35rem 0.85rem;
+  background: rgba(192, 57, 43, 0.1);
+  border: 1px solid var(--red);
+  border-radius: 20px;
+  color: #e74c3c;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+
+.filter-clear-btn:hover {
+  background: rgba(192, 57, 43, 0.2);
+}
+
+/* Result count */
+.cardlist__count {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  padding-left: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .cardlist__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cardlist__search input { width: 160px; }
+  .cardlist__filters { gap: 0.75rem; }
+}
+
+.cardlist__loading,
+.cardlist__error {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.cardlist__error {
+  color: #e74c3c;
 }

@@ -1,14 +1,80 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Raleway:wght@300;400;500;600&display=swap');
+
+:root {
+  --gold: #c9a84c;
+  --gold-light: #e8c97a;
+  --gold-dark: #8b6914;
+  --black: #0a0a0a;
+  --dark: #111111;
+  --dark-card: #1a1a1a;
+  --dark-border: #2a2a2a;
+  --text-primary: #f0e6c8;
+  --text-secondary: #a09070;
+  --red: #c0392b;
+  --transition: 0.3s ease;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Light mode */
+body.light {
+  --black: #f5f0e8;
+  --dark: #ece6d8;
+  --dark-card: #e0d8c8;
+  --dark-border: #c8bea8;
+  --text-primary: #2a1f0a;
+  --text-secondary: #6b5a3a;
+  background-color: var(--black);
+  color: var(--text-primary);
+}
+
+body.light .navbar {
+  background: linear-gradient(90deg, #e8dfc8 0%, #f5edd8 50%, #e8dfc8 100%);
+}
+
+body.light .navbar__links li a {
+  color: var(--text-secondary);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--text-primary);
+  font-family: 'Raleway', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
 }

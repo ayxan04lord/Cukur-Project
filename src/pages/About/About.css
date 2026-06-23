@@ -1,0 +1,133 @@
+.about__hero {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.about__hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+}
+
+.about__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 40%, var(--black) 100%);
+}
+
+.about__hero-text {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.about__hero-text h1 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.about__hero-text p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  letter-spacing: 3px;
+  margin-top: 0.5rem;
+}
+
+.about__content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.about__block h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.about__block p {
+  color: var(--text-secondary);
+  line-height: 1.9;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Stats */
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.about__stat {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: 6px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: border-color var(--transition);
+}
+
+.about__stat:hover {
+  border-color: var(--gold-dark);
+}
+
+.about__stat-num {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--gold);
+}
+
+.about__stat-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Cast */
+.about__cast {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.about__cast li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--dark-border);
+  display: flex;
+  gap: 0.5rem;
+}
+
+.about__cast li span {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .about__stats { grid-template-columns: repeat(2, 1fr); }
+  .about__hero { height: 260px; }
+}

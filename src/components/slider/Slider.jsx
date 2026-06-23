@@ -1,101 +1,81 @@
+import { useState, useEffect, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 import './Slider.css';
 
-// import sezon1 from '../../../public/img/Cukur_SEZON1.jpg';
-
-
 const Slider = () => {
-    return (
-        <div id="demo" className="carousel slide custom-carousel" data-bs-ride="carousel">
-            {/* Indicators/dots */}
-            <div className="carousel-indicators custom-indicators">
-                <button
-                    type="button"
-                    data-bs-target="#demo"
-                    data-bs-slide-to={0}
-                    className="active"
-                />
-                <button type="button" data-bs-target="#demo" data-bs-slide-to={1} />
-                <button type="button" data-bs-target="#demo" data-bs-slide-to={2} />
-                <button type="button" data-bs-target="#demo" data-bs-slide-to={3} />
+  const { slides, slidesLoading } = useSelector((s) => s.content);
+  const [active,    setActive]    = useState(0);
+  const [animating, setAnimating] = useState(false);
+
+  const count = slides.length;
+
+  const goTo = useCallback((index) => {
+    if (animating || count === 0) return;
+    setAnimating(true);
+    setActive(index);
+    setTimeout(() => setAnimating(false), 600);
+  }, [animating, count]);
+
+  const prev = () => goTo((active - 1 + count) % count);
+  const next = useCallback(() => goTo((active + 1) % count), [active, count, goTo]);
+
+  useEffect(() => {
+    if (count === 0) return;
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next, count]);
+
+  // Slides yüklənərkən skeleton göstər
+  if (slidesLoading || count === 0) {
+    return <div className="slider slider--skeleton" aria-busy="true" />;
+  }
+
+  return (
+    <section className="slider">
+      <div className="slider__track">
+        {slides.map((slide, i) => (
+          <div
+            key={slide.id}
+            className={`slider__slide ${i === active ? 'active' : ''}`}
+            aria-hidden={i !== active}
+          >
+            <img src={slide.image} alt={slide.label} className="slider__img" />
+            <div className="slider__overlay" />
+            <div className="slider__info">
+              <p className="slider__year">{slide.year}</p>
+              <h2 className="slider__title">{slide.label}</h2>
+              <a
+                href={slide.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="slider__btn"
+              >
+                <i className="fa fa-play" /> İzlə
+              </a>
             </div>
+          </div>
+        ))}
+      </div>
 
-            {/* The slideshow/carousel */}
-            <div className="carousel-inner">
-                <div className="carousel-item active">
-                    <div className="image-container">
-                        <a href="https://youtube.com/playlist?list=PLAKgawc7H3oYIRuQcxomjlUOPCvZjg7YI&si=zhgxyCk5Zwo7M1CM" target="_blank" rel="noopener noreferrer">
-                        <img
-                            src={'./img/Cukur_SEZON1.jpg'}
-                            alt="Sezon_4"
-                            className="d-block custom-image"
-                        />
-                        </a>
-                        
-                        <div className="text-overlay">SEZON 1</div>
-                    </div>
-                </div>
-                <div className="carousel-item">
-                    <div className="image-container">
-                        <a href="https://youtube.com/playlist?list=PL7h02KuJlP_H4M2cekyoJANr5mMqlCN3T&si=7QVuw74Oa05P7iTT" target="_blank" rel="noopener noreferrer">
-                        <img
-                            src={'./img/Çukur_2._sezon.jpg'}
-                            alt="Sezon_2"
-                            className="d-block custom-image"
-                        />
-                        </a>
-                        
-                        <div className="text-overlay">SEZON 2</div>
-                    </div>
-                </div>
-                <div className="carousel-item">
-                    <div className="image-container">
-                        <a href="https://youtube.com/playlist?list=PLN7aJACZDHx47GizuD1dZmG0_XJpktEic&si=wgJGWzQ8dcADB3GV" target="_blank" rel="noopener noreferrer">
-                        <img
-                            src={"./img/sezon_3.jpg"}
-                            alt="Sezon_3"
-                            className="d-block custom-image"
-                        />
-                        </a>
-                        
-                        <div className="text-overlay">SEZON 3</div>
-                    </div>
-                </div>
-                <div className="carousel-item">
+      <button className="slider__control slider__control--prev" onClick={prev} aria-label="Əvvəlki">
+        <i className="fa fa-chevron-left" />
+      </button>
+      <button className="slider__control slider__control--next" onClick={next} aria-label="Sonrakı">
+        <i className="fa fa-chevron-right" />
+      </button>
 
-                    <div className="image-container">
-                        <a href="https://youtube.com/playlist?list=PLN7aJACZDHx7O-3c2g1YQn1YTJfQrbKNI&si=wEAN9v4CRtjQUbBV" target="_blank" rel="noopener noreferrer">
-                        <img
-                            src={"./img/sezon4.webp"}
-                            alt="Sezon_4"
-                            className="d-block custom-image"
-                        />
-                        </a>
-                        
-                        <div className="text-overlay">SEZON 4</div>
-                    </div>
-
-                </div>
-            </div>
-
-            {/* Left and right controls/icons */}
-            <button
-                className="carousel-control-prev custom-control"
-                type="button"
-                data-bs-target="#demo"
-                data-bs-slide="prev"
-            >
-                <span className="custom-control-icon">&lsaquo;</span>
-            </button>
-            <button
-                className="carousel-control-next custom-control"
-                type="button"
-                data-bs-target="#demo"
-                data-bs-slide="next"
-            >
-                <span className="custom-control-icon">&rsaquo;</span>
-            </button>
-        </div>
-    );
+      <div className="slider__dots">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            className={`slider__dot ${i === active ? 'active' : ''}`}
+            onClick={() => goTo(i)}
+            aria-label={`Slayd ${i + 1}`}
+          />
+        ))}
+      </div>
+    </section>
+  );
 };
 
 export default Slider;

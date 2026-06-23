@@ -1,0 +1,237 @@
+.review-section {
+  padding-top: 1rem;
+  border-top: 1px solid var(--dark-border);
+}
+
+.review-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.review-section__title {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.review-avg {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.review-avg__num {
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 0.9rem;
+}
+
+.review-avg__star {
+  color: #f1c40f;
+  font-size: 0.9rem;
+}
+
+.review-avg__count {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+/* Star rating */
+.star-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.star {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: #3a3a3a;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.star.filled { color: #f1c40f; }
+
+.star:not(:disabled):hover {
+  transform: scale(1.2);
+  color: #f1c40f;
+}
+
+.star:disabled { cursor: default; }
+
+/* Form */
+.review-form {
+  background: #1a1a1a;
+  border: 1px solid var(--dark-border);
+  border-radius: 10px;
+  padding: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.review-form__top {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.review-form__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--gold-dark);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.review-form__inputs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.review-form__textarea {
+  width: 100%;
+  background: #111;
+  border: 1px solid var(--dark-border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.83rem;
+  padding: 0.5rem 0.75rem;
+  resize: none;
+  transition: border-color var(--transition);
+}
+
+.review-form__textarea:focus {
+  outline: none;
+  border-color: var(--gold-dark);
+}
+
+.review-form__textarea::placeholder {
+  color: #4a4a4a;
+}
+
+.review-form__error {
+  font-size: 0.78rem;
+  color: #e74c3c;
+  margin-bottom: 0.4rem;
+}
+
+.review-form__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.review-form__char {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+}
+
+.review-form__submit {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: #0a0a0a;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+
+.review-form__submit:hover { opacity: 0.85; }
+
+/* Login hint */
+.review-login-hint {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 0.75rem 0;
+  font-style: italic;
+}
+
+.review-login-hint a {
+  color: var(--gold);
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.review-login-hint a:hover { border-bottom-color: var(--gold); }
+
+/* Empty */
+.review-empty {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+/* List */
+.review-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.review-list::-webkit-scrollbar { width: 3px; }
+.review-list::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
+
+.review-item {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.review-item__avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--dark-border);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.review-item__body {
+  flex: 1;
+}
+
+.review-item__top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.review-item__user {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.review-item__date {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  margin-left: auto;
+}
+
+.review-item__text {
+  font-size: 0.83rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
